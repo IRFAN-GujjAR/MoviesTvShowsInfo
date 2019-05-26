@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private SearchView searchView;
 
     /**
-     *Declaring the Search Menu Item so that we can disable it's visibility in favourites movies or tv shows.
+     * Declaring the Search Menu Item so that we can disable it's visibility in favourites movies or tv shows.
      */
     private MenuItem searchMenuItem;
 
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                  * As in the there are two Tab Options:
                  * 1-Movies  > Case 0
                  * 2-Tv Shows > Case 1
-                 *So both have different bottomNavigation View,so for this bottomNavigation View is cleared
+                 * So both have different bottomNavigation View,so for this bottomNavigation View is cleared
                  * and re-inflated in both cases.
                  */
                 switch (i) {
@@ -295,7 +295,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     *This method will be executed when user will submit the query and it will execute atleast twice,
+     * This method will be executed when user will submit the query and it will execute atleast twice,
      * so that's whe {@isNewIntent} boolean variable is created so it helps to check whether is {@onNewIntent}
      * is executed first time or second time, if it is first time then get search and submit query and save search suggestions
      * otherwise it will not execute.
@@ -348,9 +348,9 @@ public class MainActivity extends AppCompatActivity {
      * Method to show alert dialog whenever user presses the clear search history menu button
      * and if user presses "Yes" then delete search history otherwise dismiss the dialog.
      */
-    private void alertDialogForClearingSearchHistory(){
+    private void alertDialogForClearingSearchHistory() {
 
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(R.string.alert_dialog_search_history_message)
                 .setPositiveButton(R.string.alert_dialog_search_history_positive_button, new DialogInterface.OnClickListener() {
                     @Override
@@ -367,7 +367,7 @@ public class MainActivity extends AppCompatActivity {
                         dialog.dismiss();
                     }
                 });
-        AlertDialog alertDialog=builder.create();
+        AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
 
