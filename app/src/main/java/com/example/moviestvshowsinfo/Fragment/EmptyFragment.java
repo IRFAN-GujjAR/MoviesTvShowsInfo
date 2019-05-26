@@ -10,20 +10,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.moviestvshowsinfo.AsynTaskLoaderJSONPasrsing.CheckInternetConnectionAndResultsLoader;
 import com.example.moviestvshowsinfo.R;
 import com.example.moviestvshowsinfo.Utils.Utils;
 
-
 public class EmptyFragment extends Fragment implements LoaderManager.LoaderCallbacks<Boolean[]> {
 
-    private View view = null;
 
+    private LinearLayout linearLayout;
+    private ImageView resultsNotFoundImageView;
     private TextView emptyTextView;
     private ImageView retryImageView;
-
+    private TextView resultNotFoundTextView;
 
     public EmptyFragment() {
 
@@ -33,11 +34,20 @@ public class EmptyFragment extends Fragment implements LoaderManager.LoaderCallb
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.empty_fragment_layout, container, false);
-        view.setVisibility(View.GONE);
+        View view = inflater.inflate(R.layout.empty_fragment_layout, container, false);
 
-        emptyTextView = (TextView) view.findViewById(R.id.empty_text_view);
-        retryImageView = (ImageView) view.findViewById(R.id.retry_image_view);
+        linearLayout=(LinearLayout) view.findViewById(R.id.linear_layout_empty_fragment);
+        resultsNotFoundImageView=(ImageView) view.findViewById(R.id.result_not_found_image_view);
+        emptyTextView=(TextView) view.findViewById(R.id.empty_text_view);
+        retryImageView=(ImageView) view.findViewById(R.id.retry_image_view);
+        resultNotFoundTextView=(TextView) view.findViewById(R.id.result_not_found_text_view);
+
+        emptyTextView.setVisibility(View.GONE);
+        resultsNotFoundImageView.setVisibility(View.INVISIBLE);
+        emptyTextView.setVisibility(View.GONE);
+        retryImageView.setVisibility(View.GONE);
+        resultNotFoundTextView.setVisibility(View.GONE);
+
         retryImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,13 +63,15 @@ public class EmptyFragment extends Fragment implements LoaderManager.LoaderCallb
             getLoaderManager().initLoader(1, null, this);
 
         }else {
-            if(Utils.isFavouriteMovies()) {
+            resultsNotFoundImageView.setVisibility(View.VISIBLE);
+            resultsNotFoundImageView.setImageResource(R.drawable.ic_star);
+            emptyTextView.setVisibility(View.VISIBLE);
+            emptyTextView.setTextSize(30);
+            if (Utils.isFavouriteMovies()) {
                 emptyTextView.setText("No Favourites Movies Available!");
-            }else if(Utils.isFavouriteTvShows()){
+            } else if (Utils.isFavouriteTvShows()) {
                 emptyTextView.setText("No Favourite TV Shows Available!");
             }
-            retryImageView.setVisibility(View.GONE);
-            view.setVisibility(View.VISIBLE);
         }
 
         return view;
@@ -76,15 +88,20 @@ public class EmptyFragment extends Fragment implements LoaderManager.LoaderCallb
     @Override
     public void onLoadFinished(@NonNull Loader<Boolean[]> loader, Boolean[] booleans) {
         if (booleans[0] == false && booleans[1] == false) {
+            resultsNotFoundImageView.setVisibility(View.VISIBLE);
+            resultsNotFoundImageView.setImageResource(R.drawable.ic_browser);
+            emptyTextView.setVisibility(View.VISIBLE);
             emptyTextView.setText("Check Your Internet Connection!");
             retryImageView.setVisibility(View.VISIBLE);
 
         } else if (booleans[0] == true && booleans[1] == true) {
+            resultsNotFoundImageView.setVisibility(View.VISIBLE);
+            emptyTextView.setVisibility(View.VISIBLE);
             emptyTextView.setText("No Results Found!");
+            resultNotFoundTextView.setVisibility(View.VISIBLE);
             retryImageView.setVisibility(View.GONE);
         }
 
-        view.setVisibility(View.VISIBLE);
         getLoaderManager().destroyLoader(loader.getId());
     }
 

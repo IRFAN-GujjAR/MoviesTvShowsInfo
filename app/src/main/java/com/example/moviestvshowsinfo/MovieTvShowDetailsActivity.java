@@ -24,6 +24,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.moviestvshowsinfo.AsynTaskLoaderJSONPasrsing.MovieTvShowDetailsLoader;
@@ -186,6 +187,31 @@ public class MovieTvShowDetailsActivity extends AppCompatActivity implements Loa
                 public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
                     mDataBinding.backgroundImageView.setImageBitmap(bitmap);
                     backgroundImageBitmap = bitmap;
+
+                    if (movieTvShowsDetails.getmPosterPath() != null && !movieTvShowsDetails.getmPosterPath().isEmpty()) {
+                        Picasso.get()
+                                .load(movieTvShowsDetails.getmPosterPath())
+                                .resize(314, 446)
+                                .into(new Target() {
+                                    @Override
+                                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                                        posterImageBitmap = bitmap;
+                                        favouriteMenuItem.setVisible(true);
+                                    }
+
+                                    @Override
+                                    public void onBitmapFailed(Exception e, Drawable errorDrawable) {
+                                        favouriteMenuItem.setVisible(true);
+                                    }
+
+                                    @Override
+                                    public void onPrepareLoad(Drawable placeHolderDrawable) {
+
+                                    }
+                                });
+                    }else {
+                        favouriteMenuItem.setVisible(true);
+                    }
                 }
 
                 @Override
@@ -205,30 +231,6 @@ public class MovieTvShowDetailsActivity extends AppCompatActivity implements Loa
                     .resize(824, 532)
                     .into(targetForBackGroundImage);
 
-            if (movieTvShowsDetails.getmPosterPath() != null && !movieTvShowsDetails.getmPosterPath().isEmpty()) {
-                Picasso.get()
-                        .load(movieTvShowsDetails.getmPosterPath())
-                        .resize(314, 446)
-                        .into(new Target() {
-                            @Override
-                            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                                posterImageBitmap = bitmap;
-                                favouriteMenuItem.setVisible(true);
-                            }
-
-                            @Override
-                            public void onBitmapFailed(Exception e, Drawable errorDrawable) {
-                                favouriteMenuItem.setVisible(true);
-                            }
-
-                            @Override
-                            public void onPrepareLoad(Drawable placeHolderDrawable) {
-
-                            }
-                        });
-            }else {
-                favouriteMenuItem.setVisible(true);
-            }
 
         } else if (movieTvShowsDetails.getmPosterPath() != null && !movieTvShowsDetails.getmPosterPath().isEmpty()) {
 
@@ -619,9 +621,9 @@ public class MovieTvShowDetailsActivity extends AppCompatActivity implements Loa
         }
 
         if (databaseMovieOrTvShowId == Utils.getMovieOrTvShowId()) {
-            favouriteMenuItem.setIcon(R.drawable.ic_favorite_black_24dp);
+            favouriteMenuItem.setIcon(R.drawable.ic_star_filled_black_24dp);
         } else {
-            favouriteMenuItem.setIcon(R.drawable.ic_favorite_border_black_24dp);
+            favouriteMenuItem.setIcon(R.drawable.ic_star_border_black_24dp);
         }
 
         return true;
@@ -636,7 +638,7 @@ public class MovieTvShowDetailsActivity extends AppCompatActivity implements Loa
                 onBackPressed();
                 return true;
             case R.id.add_to_favourite:
-                if (item.getIcon().getConstantState().equals(getResources().getDrawable(R.drawable.ic_favorite_border_black_24dp).getConstantState())) {
+                if (item.getIcon().getConstantState().equals(getResources().getDrawable(R.drawable.ic_star_border_black_24dp).getConstantState())) {
 
                     AppExecutors.getInstance().diskIO().execute(new Runnable() {
                         @Override
@@ -645,7 +647,7 @@ public class MovieTvShowDetailsActivity extends AppCompatActivity implements Loa
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    favouriteMenuItem.setIcon(R.drawable.ic_favorite_black_24dp);
+                                    favouriteMenuItem.setIcon(R.drawable.ic_star_filled_black_24dp);
                                 }
                             });
                         }
@@ -775,7 +777,7 @@ public class MovieTvShowDetailsActivity extends AppCompatActivity implements Loa
                                                                 runOnUiThread(new Runnable() {
                                                                     @Override
                                                                     public void run() {
-                                                                        favouriteMenuItem.setIcon(R.drawable.ic_favorite_border_black_24dp);
+                                                                        favouriteMenuItem.setIcon(R.drawable.ic_star_border_black_24dp);
                                                                         if (Utils.isFavouriteMovies() || Utils.isFavouriteTvShows()) {
                                                                             onBackPressed();
                                                                         }

@@ -23,6 +23,6 @@
     <item
         android:id="@+id/tv_favourite_menu_item"
         android:enabled="true"
-        android:icon="@drawable/ic_favorite_black_24dp"
+        android:icon="@drawable/ic_star_filled_black_24dp"
         android:title="Favourites" />
 </menu>
