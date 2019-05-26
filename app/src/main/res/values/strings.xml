@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Movies Tv Shows Info</string>
+
+
+    <!--Movies TV Shows Genres Strings-->
+    <string name="id_28" translatable="false">Action</string>
+    <string name="id_12" translatable="false">Adventure</string>
+    <string name="id_16" translatable="false">Animation</string>
+    <string name="id_35" translatable="false">Comedy</string>
+    <string name="id_80" translatable="false">Crime</string>
+    <string name="id_99" translatable="false">Documentary</string>
+    <string name="id_18" translatable="false">Drama</string>
+    <string name="id_10751" translatable="false">Family</string>
+    <string name="id_14" translatable="false">Fantasy</string>
+    <string name="id_36" translatable="false">History</string>
+    <string name="id_27" translatable="false">Horror</string>
+    <string name="id_10402" translatable="false">Music</string>
+    <string name="id_9648" translatable="false">Mystery</string>
+    <string name="id_10749" translatable="false">Romance</string>
+    <string name="id_878" translatable="false">Science Fiction</string>
+    <string name="id_10770" translatable="false">TV Movie</string>
+    <string name="id_53" translatable="false">Thriller</string>
+    <string name="id_10752" translatable="false">War</string>
+    <string name="id_37" translatable="false">Western</string>
+    <string name="id_10759" translatable="false">Action and Adventure</string>
+    <string name="id_10762" translatable="false">Kids</string>
+    <string name="id_10763" translatable="false">News</string>
+    <string name="id_10764" translatable="false">Reality</string>
+    <string name="id_10765" translatable="false">Sci-Fi and Fantasy</string>
+    <string name="id_10766" translatable="false">Soap</string>
+    <string name="id_10767" translatable="false">Talk</string>
+    <string name="id_10768" translatable="false">War and Politics</string>
+
+    <!--Alert Dialog For Deleting Movie or Tv Show From favourites Strings-->
+    <string name="alert_dialog_favourites_message" translatable="false">Do you want to remove it from favourites ?</string>
+    <string name="alert_dialog_favourites_positive_button" translatable="false">Yes</string>
+    <string name="alert_dialog_favourites_negative_button" translatable="false">Cancel</string>
+
+    <!--Alert Dialog For Clearing Search History Strings-->
+    <string name="alert_dialog_search_history_message" translatable="false">Are you sure you want to clear search history ?</string>
+    <string name="alert_dialog_search_history_positive_button" translatable="false">Yes</string>
+    <string name="alert_dialog_search_history_negative_button" translatable="false">Cancel</string>
+</resources>

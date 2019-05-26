@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@android:color/white</color>
+    <color name="colorPrimaryDark">@android:color/darker_gray</color>
+    <color name="colorAccent">#9A9393</color>
+
+    <color name="divider_color">#1F000000</color>
+
+
+    <color name="bottom_navigation_checked">@android:color/holo_red_dark</color>
+    <color name="bottom_navigation_unchecked">#555555</color>
+</resources>

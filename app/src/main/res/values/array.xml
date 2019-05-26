@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="movies_tv_shows_integer_genres_array">
+        <item>28</item>
+        <item>12</item>
+        <item>16</item>
+        <item>35</item>
+        <item>80</item>
+        <item>99</item>
+        <item>18</item>
+        <item>10751</item>
+        <item>14</item>
+        <item>36</item>
+        <item>27</item>
+        <item>10402</item>
+        <item>9648</item>
+        <item>10749</item>
+        <item>878</item>
+        <item>10770</item>
+        <item>53</item>
+        <item>10752</item>
+        <item>37</item>
+        <item>10759</item>
+        <item>10762</item>
+        <item>10763</item>
+        <item>10764</item>
+        <item>10765</item>
+        <item>10766</item>
+        <item>10767</item>
+        <item>10768</item>
+    </integer-array>
+
+    <string-array name="movies_tv_shows_string_genres_array">
+        <item>@string/id_28</item>
+        <item>@string/id_12</item>
+        <item>@string/id_16</item>
+        <item>@string/id_35</item>
+        <item>@string/id_80</item>
+        <item>@string/id_99</item>
+        <item>@string/id_18</item>
+        <item>@string/id_10751</item>
+        <item>@string/id_14</item>
+        <item>@string/id_36</item>
+        <item>@string/id_27</item>
+        <item>@string/id_10402</item>
+        <item>@string/id_9648</item>
+        <item>@string/id_10749</item>
+        <item>@string/id_878</item>
+        <item>@string/id_10770</item>
+        <item>@string/id_53</item>
+        <item>@string/id_10752</item>
+        <item>@string/id_37</item>
+        <item>@string/id_10759</item>
+        <item>@string/id_10762</item>
+        <item>@string/id_10763</item>
+        <item>@string/id_10764</item>
+        <item>@string/id_10765</item>
+        <item>@string/id_10766</item>
+        <item>@string/id_10767</item>
+        <item>@string/id_10768</item>
+    </string-array>
+</resources>

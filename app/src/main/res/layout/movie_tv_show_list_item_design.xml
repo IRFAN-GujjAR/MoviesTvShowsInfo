@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="223dp"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background">
+
+        <RelativeLayout
+            android:id="@+id/picture_relative_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true">
+
+            <ImageView
+                android:id="@+id/poster_image_view"
+                android:layout_width="157dp"
+                android:layout_height="223dp"
+                android:scaleType="fitCenter"
+                tools:src="@drawable/jack_reacher_poster" />
+
+            <TextView
+                android:id="@+id/empty_poster_image_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/gloucester_mt"
+                android:gravity="center"
+                android:maxWidth="130dp"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:visibility="gone"
+                tools:text="Movie TV Show Name" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/picture_relative_layout"
+            android:layout_toLeftOf="@id/imageView6"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/gloucester_mt"
+                android:maxWidth="190dp"
+                android:maxLines="2"
+                android:scrollHorizontally="true"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                tools:text="Jack Reacher" />
+
+            <TextView
+                android:id="@+id/genre_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/gloucester_mt"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
+                android:textSize="19sp"
+                tools:text="Action, Thriller, Crime" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/language_title_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gloucester_mt"
+                    android:text="Language : "
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:id="@+id/language_summary_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/gloucester_mt"
+                    android:textSize="19sp"
+                    tools:text="en" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/release_date_title_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Release Date :"
+                    android:textSize="19sp"
+                    android:fontFamily="@font/gloucester_mt"
+                    tools:text="Release Date :" />
+
+                <TextView
+                    android:id="@+id/release_date_summary_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    app:fontFamily="@font/gloucester_mt"
+                    android:layout_marginLeft="4dp"
+                    tools:text="12-22-1201" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linear_layout_imdb_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_toRightOf="@id/picture_relative_layout"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="6dp">
+            <ImageView
+                android:id="@+id/imdb_icon_image_view"
+                android:layout_width="63dp"
+                android:layout_height="63dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/imdb_icon" />
+
+            <TextView
+                android:id="@+id/vote_average_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                app:fontFamily="@font/gloucester_mt"
+                app:layout_constraintStart_toEndOf="@+id/imdb_icon_image_view"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="7.3" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="8dp"
+            app:srcCompat="@drawable/ic_right_arrow" />
+
+        <ImageView
+            android:id="@+id/adult_icon_image_view"
+            android:layout_width="48dp"
+            android:layout_height="45dp"
+            android:src="@drawable/adult_18_icon"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="170dp"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+</layout>

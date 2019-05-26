@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tv_shows_popular_menu_item"
+        android:enabled="true"
+        android:icon="@drawable/ic_fire"
+        android:title="Popular" />
+    <item
+        android:id="@+id/tv_shows_top_rated_menu_item"
+        android:enabled="true"
+        android:icon="@drawable/ic_customer_review"
+        android:title="Top Rated" />
+    <item
+        android:id="@+id/tv_shows_airing_today_menu_item"
+        android:enabled="true"
+        android:icon="@drawable/ic_electric_current_symbol"
+        android:title="Airing Today" />
+    <item
+        android:id="@+id/tv_shows_on_the_air_menu_item"
+        android:enabled="true"
+        android:icon="@drawable/ic_airplane_shape"
+        android:title="On the Air" />
+    <item
+        android:id="@+id/tv_favourite_menu_item"
+        android:enabled="true"
+        android:icon="@drawable/ic_favorite_black_24dp"
+        android:title="Favourites" />
+</menu>
