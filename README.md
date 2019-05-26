@@ -1,14 +1,6 @@
-My Store App
+Movie Tv Show Info App
 ===================================
-This app is a store app where you can add, manage, and delete products. This app uses sqlite database to store and
-manage products.
-
-Getting Started
----------------
-
-This sample uses the Gradle build system. To build this project, use the
-"gradlew build" command or use "Import Project" in Android Studio.
-
+This app displays Movies and Tv Shows and information related to that particular Movie or Tv Show.
 
 PROJECT LICENSE
 
