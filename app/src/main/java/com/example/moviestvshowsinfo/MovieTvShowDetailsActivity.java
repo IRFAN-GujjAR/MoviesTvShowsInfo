@@ -666,6 +666,10 @@ public class MovieTvShowDetailsActivity extends AppCompatActivity implements Loa
     }
 
 
+    /**
+     * This method only displays a dialog whenever the user add or delete movie or tv show
+     * from  the favourites.
+     */
     private void favouritesAddOrDeleteDialog(){
 
         final Dialog dialog=new Dialog(this,R.style.AddedOrDeletedFromFavourites);
