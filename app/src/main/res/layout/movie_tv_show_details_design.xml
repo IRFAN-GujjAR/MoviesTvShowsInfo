@@ -284,10 +284,13 @@
                     android:layout_width="77dp"
                     android:layout_height="57dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginRight="24dp"
+                    android:layout_marginEnd="28dp"
+                    android:layout_marginRight="28dp"
+                    android:layout_marginBottom="24dp"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/trailer_text_view"
+                    app:layout_constraintVertical_bias="0.0"
                     app:srcCompat="@drawable/youtube_icon" />
 
                 <TextView
