@@ -7,8 +7,8 @@
     android:orientation="vertical">
 
     <ImageView
-        android:layout_width="123dp"
-        android:layout_height="63dp"
+        android:layout_width="67dp"
+        android:layout_height="75dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         app:srcCompat="@drawable/ic_star_2" />
@@ -20,10 +20,11 @@
         android:fontFamily="@font/gloucester_mt"
         android:textSize="24sp"
         android:textColor="@android:color/black"
-        android:text="Added to Favourites !"
+        android:gravity="center"
+        android:text="Added to Favourites !\nYou can also see it also offline."
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"/>
 
 </LinearLayout>

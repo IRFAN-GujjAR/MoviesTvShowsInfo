@@ -678,7 +678,7 @@ public class MovieTvShowDetailsActivity extends AppCompatActivity implements Loa
         TextView textView=(TextView) view.findViewById(R.id.dialog_text_view);
         if(favouriteMenuItem.getIcon().getConstantState().equals(getResources().getDrawable(R.drawable.ic_star_border_black_24dp)
                 .getConstantState())){
-            textView.setText("Added to Favourites!");
+            textView.setText("Added to Favourites!\nYou can also see it also offline.");
         }else {
             textView.setText("Deleted from Favourites!");
         }
@@ -694,7 +694,7 @@ public class MovieTvShowDetailsActivity extends AppCompatActivity implements Loa
                     dialog.dismiss();
                 }
             }
-        },1000);
+        },1500);
 
     }
 
