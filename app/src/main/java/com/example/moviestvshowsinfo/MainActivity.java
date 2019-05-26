@@ -14,10 +14,10 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.moviestvshowsinfo.Utils.Utils;
 import com.example.moviestvshowsinfo.Adapters.ScreenSlidePagerAdpater;
@@ -41,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
     private SearchView searchView;
 
     /**
+     *Declaring the Search Menu Item so that we can disable it's visibility in favourites movies or tv shows.
+     */
+    private MenuItem searchMenuItem;
+
+    /**
      * This variable is declared to handle the logic of {@OnNewIntent).
      */
     private Boolean isNewIntent = true;
@@ -52,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
@@ -149,6 +153,9 @@ public class MainActivity extends AppCompatActivity {
         Utils.setCurrentUrl(Utils.MOVIES_POPULAR_URL);
         Utils.setMovie(true);
         Utils.setTvShow(false);
+        Utils.setFavouriteMovies(false);
+        Utils.setFavouriteTvShows(false);
+        Utils.setEmptyMovieTvShowList(false);
         activityMainBinding.bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -158,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setCurrentUrl(Utils.MOVIES_POPULAR_URL);
                         Utils.setFavouriteMovies(false);
                         Utils.setFavouriteTvShows(false);
+                        searchMenuItem.setVisible(true);
                         pagerAdapter.notifyDataChanged();
                         break;
                     case R.id.movies_top_rated_menu_item:
@@ -165,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setCurrentUrl(Utils.MOVIES_TOP_RATED_URL);
                         Utils.setFavouriteMovies(false);
                         Utils.setFavouriteTvShows(false);
+                        searchMenuItem.setVisible(true);
                         pagerAdapter.notifyDataChanged();
                         break;
                     case R.id.movies_latest_menu_item:
@@ -172,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setCurrentUrl(Utils.MOVIES_NOW_PLAYING_URL);
                         Utils.setFavouriteMovies(false);
                         Utils.setFavouriteTvShows(false);
+                        searchMenuItem.setVisible(true);
                         pagerAdapter.notifyDataChanged();
                         break;
                     case R.id.movies_upcoming_menu_item:
@@ -180,12 +190,14 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setFavouriteMovies(false);
                         Utils.setFavouriteTvShows(false);
                         pagerAdapter.notifyDataChanged();
+                        searchMenuItem.setVisible(true);
                         break;
                     case R.id.tv_shows_popular_menu_item:
                         Utils.setEmptyMovieTvShowList(false);
                         Utils.setCurrentUrl(Utils.TV_SHOWS_POPULAR_URL);
                         Utils.setFavouriteMovies(false);
                         Utils.setFavouriteTvShows(false);
+                        searchMenuItem.setVisible(true);
                         pagerAdapter.notifyDataChanged();
                         break;
                     case R.id.tv_shows_top_rated_menu_item:
@@ -193,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setCurrentUrl(Utils.TV_SHOWS_TOP_RATED_URL);
                         Utils.setFavouriteMovies(false);
                         Utils.setFavouriteTvShows(false);
+                        searchMenuItem.setVisible(true);
                         pagerAdapter.notifyDataChanged();
                         break;
                     case R.id.tv_shows_airing_today_menu_item:
@@ -200,6 +213,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setCurrentUrl(Utils.TV_SHOWS_AIRING_TODAY_URL);
                         Utils.setFavouriteMovies(false);
                         Utils.setFavouriteTvShows(false);
+                        searchMenuItem.setVisible(true);
                         pagerAdapter.notifyDataChanged();
                         break;
                     case R.id.tv_shows_on_the_air_menu_item:
@@ -207,6 +221,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setCurrentUrl(Utils.TV_SHOWS_ON_THE_AIR_URL);
                         Utils.setFavouriteMovies(false);
                         Utils.setFavouriteTvShows(false);
+                        searchMenuItem.setVisible(true);
                         pagerAdapter.notifyDataChanged();
                         break;
                     case R.id.movies_favourite_menu_item:
@@ -214,6 +229,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setFavouriteMovies(true);
                         Utils.setFavouriteTvShows(false);
                         Utils.setIsSearched(false);
+                        searchMenuItem.setVisible(false);
                         pagerAdapter.notifyDataChanged();
                         break;
                     case R.id.tv_favourite_menu_item:
@@ -221,6 +237,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setFavouriteTvShows(true);
                         Utils.setFavouriteMovies(false);
                         Utils.setIsSearched(false);
+                        searchMenuItem.setVisible(false);
                         pagerAdapter.notifyDataChanged();
                         break;
                 }
@@ -240,7 +257,7 @@ public class MainActivity extends AppCompatActivity {
          * so, it can be used later for saving submitting query and saving search suggestions.
          */
 
-        MenuItem searchMenuItem = menu.findItem(R.id.search_menu_item);
+        searchMenuItem = menu.findItem(R.id.search_menu_item);
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView = (SearchView) searchMenuItem.getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
