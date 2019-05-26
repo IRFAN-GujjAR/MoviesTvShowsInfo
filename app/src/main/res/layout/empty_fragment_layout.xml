@@ -54,7 +54,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/gloucester_mt"
-            android:text="Try using different keywords."
+            android:text="Try using different keywords in the search."
             android:textSize="22sp" />
 
     </LinearLayout>
