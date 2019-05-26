@@ -1,5 +1,6 @@
 package com.example.moviestvshowsinfo;
 
+import android.app.Dialog;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.ActivityNotFoundException;
@@ -13,6 +14,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.LoaderManager;
@@ -21,11 +23,11 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.moviestvshowsinfo.AsynTaskLoaderJSONPasrsing.MovieTvShowDetailsLoader;
 import com.example.moviestvshowsinfo.AsynTaskLoaderJSONPasrsing.MovieTvShowYouTubeVideoLoader;
@@ -647,6 +649,7 @@ public class MovieTvShowDetailsActivity extends AppCompatActivity implements Loa
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
+                                    favouritesAddOrDeleteDialog();
                                     favouriteMenuItem.setIcon(R.drawable.ic_star_filled_black_24dp);
                                 }
                             });
@@ -660,6 +663,35 @@ public class MovieTvShowDetailsActivity extends AppCompatActivity implements Loa
                 }
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    private void favouritesAddOrDeleteDialog(){
+
+        final Dialog dialog=new Dialog(this,R.style.AddedOrDeletedFromFavourites);
+        View view=LayoutInflater.from(this).inflate(R.layout.favourites_dialog,null);
+
+        TextView textView=(TextView) view.findViewById(R.id.dialog_text_view);
+        if(favouriteMenuItem.getIcon().getConstantState().equals(getResources().getDrawable(R.drawable.ic_star_border_black_24dp)
+                .getConstantState())){
+            textView.setText("Added to Favourites!");
+        }else {
+            textView.setText("Deleted from Favourites!");
+        }
+
+        dialog.setContentView(view);
+        dialog.show();
+
+        Handler handler=new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if(dialog.isShowing()){
+                    dialog.dismiss();
+                }
+            }
+        },1000);
+
     }
 
 
@@ -777,10 +809,12 @@ public class MovieTvShowDetailsActivity extends AppCompatActivity implements Loa
                                                                 runOnUiThread(new Runnable() {
                                                                     @Override
                                                                     public void run() {
-                                                                        favouriteMenuItem.setIcon(R.drawable.ic_star_border_black_24dp);
                                                                         if (Utils.isFavouriteMovies() || Utils.isFavouriteTvShows()) {
                                                                             onBackPressed();
+                                                                        }else {
+                                                                            favouritesAddOrDeleteDialog();
                                                                         }
+                                                                        favouriteMenuItem.setIcon(R.drawable.ic_star_border_black_24dp);
                                                                     }
                                                                 });
                                                             }

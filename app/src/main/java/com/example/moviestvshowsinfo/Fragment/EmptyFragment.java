@@ -64,7 +64,7 @@ public class EmptyFragment extends Fragment implements LoaderManager.LoaderCallb
 
         }else {
             resultsNotFoundImageView.setVisibility(View.VISIBLE);
-            resultsNotFoundImageView.setImageResource(R.drawable.ic_star);
+            resultsNotFoundImageView.setImageResource(R.drawable.ic_star_2);
             emptyTextView.setVisibility(View.VISIBLE);
             emptyTextView.setTextSize(30);
             if (Utils.isFavouriteMovies()) {
