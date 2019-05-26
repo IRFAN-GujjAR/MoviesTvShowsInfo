@@ -236,46 +236,50 @@ public class MovieTvShowDetailsActivity extends AppCompatActivity implements Loa
 
         } else if (movieTvShowsDetails.getmPosterPath() != null && !movieTvShowsDetails.getmPosterPath().isEmpty()) {
 
+            Target target=new Target() {
+                @Override
+                public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                    mDataBinding.backgroundImageView.setImageBitmap(bitmap);
+                    Picasso.get()
+                            .load(movieTvShowsDetails.getmPosterPath())
+                            .resize(314,446)
+                            .into(new Target() {
+                                @Override
+                                public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                                    posterImageBitmap = bitmap;
+                                    favouriteMenuItem.setVisible(true);
+                                }
+
+                                @Override
+                                public void onBitmapFailed(Exception e, Drawable errorDrawable) {
+
+                                }
+
+                                @Override
+                                public void onPrepareLoad(Drawable placeHolderDrawable) {
+
+                                }
+                            });
+                }
+
+                @Override
+                public void onBitmapFailed(Exception e, Drawable errorDrawable) {
+
+                }
+
+                @Override
+                public void onPrepareLoad(Drawable placeHolderDrawable) {
+
+                }
+            };
+
+            mDataBinding.backgroundImageView.setTag(target);
 
             Picasso.get()
                     .load(movieTvShowsDetails.getmPosterPath())
-                    .resize(823, 532)
-                    .into(new Target() {
-                        @Override
-                        public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                            mDataBinding.backgroundImageView.setImageBitmap(bitmap);
-                        }
+                    .resize(824,532)
+                    .into(target);
 
-                        @Override
-                        public void onBitmapFailed(Exception e, Drawable errorDrawable) {
-
-                        }
-
-                        @Override
-                        public void onPrepareLoad(Drawable placeHolderDrawable) {
-
-                        }
-                    });
-
-            Picasso.get()
-                    .load(movieTvShowsDetails.getmPosterPath())
-                    .resize(314, 446)
-                    .into(new Target() {
-                        @Override
-                        public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                            posterImageBitmap = bitmap;
-                            favouriteMenuItem.setVisible(true);
-                        }
-
-                        @Override
-                        public void onBitmapFailed(Exception e, Drawable errorDrawable) {
-                        }
-
-                        @Override
-                        public void onPrepareLoad(Drawable placeHolderDrawable) {
-
-                        }
-                    });
         } else {
             mDataBinding.backgroundImageView.setBackgroundColor(Color.BLACK);
             if (!movieTvShowsDetails.getmName().isEmpty()) {
@@ -694,7 +698,7 @@ public class MovieTvShowDetailsActivity extends AppCompatActivity implements Loa
                     dialog.dismiss();
                 }
             }
-        },1500);
+        },2000);
 
     }
 
