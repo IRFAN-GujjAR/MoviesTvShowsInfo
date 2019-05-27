@@ -66,12 +66,16 @@ public class EmptyFragment extends Fragment implements LoaderManager.LoaderCallb
             resultsNotFoundImageView.setVisibility(View.VISIBLE);
             resultsNotFoundImageView.setImageResource(R.drawable.ic_star_2);
             emptyTextView.setVisibility(View.VISIBLE);
+            resultNotFoundTextView.setVisibility(View.VISIBLE);
             emptyTextView.setTextSize(30);
             if (Utils.isFavouriteMovies()) {
                 emptyTextView.setText("No Favourites Movies Available!");
+                resultNotFoundTextView.setText("Add some Movies to favourites, so you can watch those later when you are offline.");
             } else if (Utils.isFavouriteTvShows()) {
                 emptyTextView.setText("No Favourite TV Shows Available!");
+                resultNotFoundTextView.setText("Add some TV Shows to favourites, so you can watch those later when you are offline.");
             }
+
         }
 
         return view;
