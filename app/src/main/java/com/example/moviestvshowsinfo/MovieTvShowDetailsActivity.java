@@ -140,7 +140,9 @@ public class MovieTvShowDetailsActivity extends AppCompatActivity implements Loa
             });
 
 
-            MovieTvShowsDetailsViewModelFactory movieTvShowsDetailsViewModelFactory = new MovieTvShowsDetailsViewModelFactory(appDataBase, Utils.getMovieOrTvShowId());
+            MovieTvShowsDetailsViewModelFactory movieTvShowsDetailsViewModelFactory = new
+                    MovieTvShowsDetailsViewModelFactory(appDataBase, Utils.getMovieOrTvShowId());
+
             final MovieTvShowsDetailsViewModel movieTvShowsDetailsViewModel = ViewModelProviders
                     .of(this, movieTvShowsDetailsViewModelFactory)
                     .get(MovieTvShowsDetailsViewModel.class);
