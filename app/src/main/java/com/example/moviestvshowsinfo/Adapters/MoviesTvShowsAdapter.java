@@ -132,8 +132,6 @@ public class MoviesTvShowsAdapter extends RecyclerView.Adapter<MoviesTvShowsAdap
     @Override
     public void onBindViewHolder(@NonNull MovieViewsHolder movieViewsHolder, int i) {
 
-
-
         /**
          * This if statement contains all code of displaying the data gathered from database.
          */

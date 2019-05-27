@@ -176,7 +176,6 @@ public class MovieTvShowsFragment extends Fragment implements LoaderManager.Load
 
         } else {
 
-
             appDataBase = AppDataBase.getInstance(getContext().getApplicationContext());
 
             /**
