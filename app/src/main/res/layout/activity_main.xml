@@ -46,13 +46,13 @@
         <android.support.v7.widget.CardView
             android:id="@+id/card_view_bottom_navigation_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="?attr/actionBarSize"
             android:layout_gravity="bottom">
 
             <android.support.design.widget.BottomNavigationView
                 android:id="@+id/bottom_navigation"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 app:itemIconSize="20dp"
                 app:itemIconTint="@drawable/selector"
                 app:itemTextAppearanceActive="@style/BottomNavigationView"
