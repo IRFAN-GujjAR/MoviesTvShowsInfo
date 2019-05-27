@@ -41,9 +41,10 @@ public class MainActivity extends AppCompatActivity {
     private SearchView searchView;
 
     /**
-     * Declaring the Search Menu Item so that we can disable it's visibility in favourites movies or tv shows.
+     * Declaring the Search Menu Item and Clear Search Menu Item so that we can disable their visibility in favourites movies or tv shows.
      */
     private MenuItem searchMenuItem;
+    private MenuItem clearSearchHistoryMenuItem;
 
     /**
      * This variable is declared to handle the logic of {@OnNewIntent).
@@ -166,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setFavouriteMovies(false);
                         Utils.setFavouriteTvShows(false);
                         searchMenuItem.setVisible(true);
+                        clearSearchHistoryMenuItem.setVisible(true);
                         pagerAdapter.notifyDataChanged();
                         break;
                     case R.id.movies_top_rated_menu_item:
@@ -174,6 +176,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setFavouriteMovies(false);
                         Utils.setFavouriteTvShows(false);
                         searchMenuItem.setVisible(true);
+                        clearSearchHistoryMenuItem.setVisible(true);
                         pagerAdapter.notifyDataChanged();
                         break;
                     case R.id.movies_latest_menu_item:
@@ -182,6 +185,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setFavouriteMovies(false);
                         Utils.setFavouriteTvShows(false);
                         searchMenuItem.setVisible(true);
+                        clearSearchHistoryMenuItem.setVisible(true);
                         pagerAdapter.notifyDataChanged();
                         break;
                     case R.id.movies_upcoming_menu_item:
@@ -190,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setFavouriteMovies(false);
                         Utils.setFavouriteTvShows(false);
                         pagerAdapter.notifyDataChanged();
+                        clearSearchHistoryMenuItem.setVisible(true);
                         searchMenuItem.setVisible(true);
                         break;
                     case R.id.tv_shows_popular_menu_item:
@@ -198,6 +203,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setFavouriteMovies(false);
                         Utils.setFavouriteTvShows(false);
                         searchMenuItem.setVisible(true);
+                        clearSearchHistoryMenuItem.setVisible(true);
                         pagerAdapter.notifyDataChanged();
                         break;
                     case R.id.tv_shows_top_rated_menu_item:
@@ -206,6 +212,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setFavouriteMovies(false);
                         Utils.setFavouriteTvShows(false);
                         searchMenuItem.setVisible(true);
+                        clearSearchHistoryMenuItem.setVisible(true);
                         pagerAdapter.notifyDataChanged();
                         break;
                     case R.id.tv_shows_airing_today_menu_item:
@@ -214,6 +221,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setFavouriteMovies(false);
                         Utils.setFavouriteTvShows(false);
                         searchMenuItem.setVisible(true);
+                        clearSearchHistoryMenuItem.setVisible(true);
                         pagerAdapter.notifyDataChanged();
                         break;
                     case R.id.tv_shows_on_the_air_menu_item:
@@ -222,6 +230,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setFavouriteMovies(false);
                         Utils.setFavouriteTvShows(false);
                         searchMenuItem.setVisible(true);
+                        clearSearchHistoryMenuItem.setVisible(true);
                         pagerAdapter.notifyDataChanged();
                         break;
                     case R.id.movies_favourite_menu_item:
@@ -230,6 +239,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setFavouriteTvShows(false);
                         Utils.setIsSearched(false);
                         searchMenuItem.setVisible(false);
+                        clearSearchHistoryMenuItem.setVisible(false);
                         pagerAdapter.notifyDataChanged();
                         break;
                     case R.id.tv_favourite_menu_item:
@@ -238,6 +248,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.setFavouriteMovies(false);
                         Utils.setIsSearched(false);
                         searchMenuItem.setVisible(false);
+                        clearSearchHistoryMenuItem.setVisible(false);
                         pagerAdapter.notifyDataChanged();
                         break;
                 }
@@ -258,6 +269,8 @@ public class MainActivity extends AppCompatActivity {
          */
 
         searchMenuItem = menu.findItem(R.id.search_menu_item);
+        clearSearchHistoryMenuItem=menu.findItem(R.id.delete_search_history);
+
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView = (SearchView) searchMenuItem.getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
