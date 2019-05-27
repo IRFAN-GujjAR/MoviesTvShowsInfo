@@ -89,7 +89,7 @@ public class EmptyFragment extends Fragment implements LoaderManager.LoaderCallb
     public void onLoadFinished(@NonNull Loader<Boolean[]> loader, Boolean[] booleans) {
         if (booleans[0] == false && booleans[1] == false) {
             resultsNotFoundImageView.setVisibility(View.VISIBLE);
-            resultsNotFoundImageView.setImageResource(R.drawable.ic_browser);
+            resultsNotFoundImageView.setImageResource(R.drawable.ic_worldwide);
             emptyTextView.setVisibility(View.VISIBLE);
             emptyTextView.setText("Check Your Internet Connection!");
             retryImageView.setVisibility(View.VISIBLE);
