@@ -288,10 +288,12 @@ public final class JSONParsing {
             String productionCompanies = "";
             JSONArray productionComapniesArray = jsonObject.optJSONArray("production_companies");
             if (productionComapniesArray != null) {
+                int companyCount=1;
                 for (int i = 0; i < productionComapniesArray.length(); i++) {
                     JSONObject currentComapny = productionComapniesArray.optJSONObject(i);
-                    String companyName = currentComapny.optString("name");
+                    String companyName =companyCount+"- "+currentComapny.optString("name");
                     productionCompanies = productionCompanies + companyName + "\n";
+                    companyCount++;
                 }
             }
 

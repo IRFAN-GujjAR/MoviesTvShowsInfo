@@ -269,12 +269,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="32dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="10dp"
                         android:fontFamily="@font/gloucester_mt"
                         android:maxWidth="290dp"
                         android:textAllCaps="false"
                         android:textSize="36sp"
-                        tools:text="New Line Cinema, US\nWing Nut Films, NZ\nThe Saul Zaentz Company, US" />
+                        tools:text="1- New Line Cinema, US\n2- Wing Nut Films, NZ\n3- The Saul Zaentz Company, US" />
 
 
                 </LinearLayout>
@@ -354,8 +354,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="Movie TV Show Name" />
-
-
 
             </android.support.constraint.ConstraintLayout>
         </RelativeLayout>
