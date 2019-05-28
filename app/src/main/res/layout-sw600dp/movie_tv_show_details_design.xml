@@ -186,7 +186,7 @@
                             android:fontFamily="sans-serif-smallcaps"
                             android:textColor="@android:color/black"
                             android:textSize="27sp"
-                            tools:text="940000 $" />
+                            tools:text="9400000 $" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -212,7 +212,7 @@
                             android:fontFamily="sans-serif-smallcaps"
                             android:textColor="@android:color/black"
                             android:textSize="27sp"
-                            tools:text="1000 $" />
+                            tools:text="1000000 $" />
                     </LinearLayout>
 
                     <LinearLayout
