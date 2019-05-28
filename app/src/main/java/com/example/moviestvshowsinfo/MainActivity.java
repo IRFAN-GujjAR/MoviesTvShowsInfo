@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
          * If the app is running on Tablet greater than Screen Size 9.5 then
          * bottomNavigationView textAppearance will be changed
          */
-        
+
         if (Utils.getDisplayMetrics(this) >= 6.8) {
             activityMainBinding.bottomNavigation.setItemTextAppearanceActive(R.style.BottomNavigationViewForTablet);
             activityMainBinding.bottomNavigation.setItemTextAppearanceInactive(R.style.BottomNavigationViewForTablet);
