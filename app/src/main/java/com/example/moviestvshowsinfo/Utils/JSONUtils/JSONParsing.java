@@ -91,7 +91,7 @@ public final class JSONParsing {
             JSONObject jsonObject = new JSONObject(jsonResponse);
 
             JSONArray results = jsonObject.optJSONArray("results");
-            if (results != null&&results.length()!=0) {
+            if (results != null && results.length() != 0) {
                 for (int i = 0; i < results.length(); i++) {
                     JSONObject currentMovie = results.optJSONObject(i);
 
@@ -109,6 +109,16 @@ public final class JSONParsing {
 
                     if (language == null || language.isEmpty()) {
                         language = "";
+                    } else {
+
+                        String[] languageCodes = Utils.getMainContext().getResources().getStringArray(R.array.languages_iso_639_1_codes);
+                        String[] languageNames = Utils.getMainContext().getResources().getStringArray(R.array.languages_english_names);
+
+                        for (int j = 0; j < languageCodes.length; j++) {
+                            if (languageCodes[j].equals(language)) {
+                                language = languageNames[j];
+                            }
+                        }
                     }
 
                     String releaseDate = currentMovie.optString("release_date");
@@ -124,11 +134,11 @@ public final class JSONParsing {
                         }
                     }
 
-                    if(releaseDate!=null&&!releaseDate.isEmpty()){
-                        String year=releaseDate.substring(2,4);
-                        String month=releaseDate.substring(5,7);
-                        String day=releaseDate.substring(8,10);
-                        releaseDate=day+"-"+month+"-"+year;
+                    if (releaseDate != null && !releaseDate.isEmpty()) {
+                        String year = releaseDate.substring(2, 4);
+                        String month = releaseDate.substring(5, 7);
+                        String day = releaseDate.substring(8, 10);
+                        releaseDate = day + "-" + month + "-" + year;
                     }
 
                     boolean adult = false;
@@ -180,8 +190,8 @@ public final class JSONParsing {
                     list.add(currentMovieTvShowsDetails);
 
                 }
-            }else {
-                list=null;
+            } else {
+                list = null;
             }
 
         } catch (JSONException e) {
@@ -240,11 +250,11 @@ public final class JSONParsing {
                 }
             }
 
-            if(releaseDate!=null&&!releaseDate.isEmpty()){
-                String year=releaseDate.substring(2,4);
-                String month=releaseDate.substring(5,7);
-                String day=releaseDate.substring(8,10);
-                releaseDate=day+"-"+month+"-"+year;
+            if (releaseDate != null && !releaseDate.isEmpty()) {
+                String year = releaseDate.substring(2, 4);
+                String month = releaseDate.substring(5, 7);
+                String day = releaseDate.substring(8, 10);
+                releaseDate = day + "-" + month + "-" + year;
             }
 
             double averageVote = jsonObject.optDouble("vote_average");
@@ -288,17 +298,17 @@ public final class JSONParsing {
             String productionCompanies = "";
             JSONArray productionComapniesArray = jsonObject.optJSONArray("production_companies");
             if (productionComapniesArray != null) {
-                int companyCount=1;
+                int companyCount = 1;
                 for (int i = 0; i < productionComapniesArray.length(); i++) {
                     JSONObject currentComapny = productionComapniesArray.optJSONObject(i);
-                    String companyName =companyCount+"- "+currentComapny.optString("name");
+                    String companyName = companyCount + "- " + currentComapny.optString("name");
                     productionCompanies = productionCompanies + companyName + "\n";
                     companyCount++;
                 }
             }
 
             movieTvShowsDetails = new MovieTvShowsDetails(movieTvShowId, title, genres, language, releaseDate, averageVote, adult, posterPath,
-                    backgroundPath,overView, budget, revenue, productionCompanies);
+                    backgroundPath, overView, budget, revenue, productionCompanies);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -340,7 +350,7 @@ public final class JSONParsing {
     }
 
     /**
-     *{@fetchDataForList} loads the list of Movies or Tv Shows.
+     * {@fetchDataForList} loads the list of Movies or Tv Shows.
      */
     public static List<MovieTvShowsDetails> fetchDataForList(String stringUrl) {
         URL url = createUrl(stringUrl);
@@ -350,7 +360,7 @@ public final class JSONParsing {
     }
 
     /**
-     *{@fetchDataForDetails} loads the details of specific Movie or Tv Show.
+     * {@fetchDataForDetails} loads the details of specific Movie or Tv Show.
      */
     public static MovieTvShowsDetails fetchDataForDetails(String stringUrl) {
         URL url = createUrl(stringUrl);
@@ -360,7 +370,7 @@ public final class JSONParsing {
     }
 
     /**
-     *{@fetchYoutubeVideoKey} loads the Youtube Video Key of specific Movie or Tv Show.
+     * {@fetchYoutubeVideoKey} loads the Youtube Video Key of specific Movie or Tv Show.
      */
     public static String fetchYoutubeVideoKey(String stringUrl) {
         URL url = createUrl(stringUrl);

@@ -31,6 +31,9 @@
     <string name="id_10767" translatable="false">Talk</string>
     <string name="id_10768" translatable="false">War and Politics</string>
 
+
+
+
     <!--Alert Dialog For Deleting Movie or Tv Show From favourites Strings-->
     <string name="alert_dialog_favourites_message" translatable="false">Do you want to remove it from favourites ?</string>
     <string name="alert_dialog_favourites_positive_button" translatable="false">Yes</string>
