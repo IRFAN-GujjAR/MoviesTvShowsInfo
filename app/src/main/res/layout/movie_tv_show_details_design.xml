@@ -104,7 +104,7 @@
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textSize="36sp"
-                        tools:text="Jack Reacher" />
+                        tools:text="Jack Reacher"/>
 
                     <TextView
                         android:id="@+id/genre_text_view"

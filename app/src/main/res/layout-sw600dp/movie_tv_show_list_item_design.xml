@@ -96,10 +96,12 @@
                         android:id="@+id/language_summary_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:ellipsize="end"
                         android:layout_marginLeft="4dp"
                         android:fontFamily="@font/gloucester_mt"
                         android:textSize="24sp"
-                        tools:text="en" />
+                        tools:text="English" />
 
                 </LinearLayout>
 
