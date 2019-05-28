@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         /**
-         * If the app is running on Tablet greater than Screen Size 9.5 then
+         * If the app is running on Tablet greater than Screen Size 6.8 then
          * bottomNavigationView textAppearance will be changed
          */
 
