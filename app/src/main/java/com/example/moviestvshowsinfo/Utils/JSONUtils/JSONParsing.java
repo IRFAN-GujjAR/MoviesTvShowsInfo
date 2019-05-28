@@ -240,7 +240,18 @@ public final class JSONParsing {
             String language = jsonObject.optString("original_language");
             if (language == null || language.isEmpty()) {
                 language = "";
+            }else {
+
+                String[] languageCodes = Utils.getMainContext().getResources().getStringArray(R.array.languages_iso_639_1_codes);
+                String[] languageNames = Utils.getMainContext().getResources().getStringArray(R.array.languages_english_names);
+
+                for (int i = 0; i < languageCodes.length; i++) {
+                    if (languageCodes[i].equals(language)) {
+                        language = languageNames[i];
+                    }
+                }
             }
+
 
             String releaseDate = jsonObject.optString("release_date");
             if (releaseDate == null || releaseDate.isEmpty()) {
