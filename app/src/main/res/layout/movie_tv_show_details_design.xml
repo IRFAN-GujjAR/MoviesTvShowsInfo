@@ -54,8 +54,8 @@
 
                 <ImageView
                     android:id="@+id/imdb_icon_image_view"
-                    android:layout_width="69dp"
-                    android:layout_height="66dp"
+                    android:layout_width="62dp"
+                    android:layout_height="59dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/imdb_icon" />
@@ -65,7 +65,7 @@
                     style="@style/Widget.MaterialComponents.Button"
                     android:layout_width="56dp"
                     android:layout_height="40dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="9dp"
                     android:clickable="false"
                     android:textColor="@android:color/white"
                     android:textSize="24sp"

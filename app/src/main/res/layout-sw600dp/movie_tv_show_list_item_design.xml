@@ -144,8 +144,8 @@
 
                 <ImageView
                     android:id="@+id/imdb_icon_image_view"
-                    android:layout_width="91dp"
-                    android:layout_height="79dp"
+                    android:layout_width="81dp"
+                    android:layout_height="69dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/imdb_icon" />
 
@@ -155,7 +155,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="16dp"
                     android:textColor="@android:color/black"
                     android:textSize="30sp"
                     app:fontFamily="@font/gloucester_mt"
