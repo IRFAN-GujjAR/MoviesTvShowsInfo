@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.moviestvshowsinfo.Utils.Utils;
 import com.example.moviestvshowsinfo.Adapters.ScreenSlidePagerAdpater;
@@ -139,8 +140,8 @@ public class MainActivity extends AppCompatActivity {
          * If the app is running on Tablet greater than Screen Size 9.5 then
          * bottomNavigationView textAppearance will be changed
          */
-
-        if (Utils.getDisplayMetrics(this) >= 9.5) {
+        
+        if (Utils.getDisplayMetrics(this) >= 6.8) {
             activityMainBinding.bottomNavigation.setItemTextAppearanceActive(R.style.BottomNavigationViewForTablet);
             activityMainBinding.bottomNavigation.setItemTextAppearanceInactive(R.style.BottomNavigationViewForTablet);
         }
