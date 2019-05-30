@@ -4,7 +4,7 @@ This app displays Movies and Tv Shows and information related to that particular
 
 Getting Started
 ===============
-This project was created by IRFAN GujjAR as part of the Android Basics Nanodegree At Udacity.
+This project was created by IRFAN GujjAR as part of the Android Basics Nanodegree (Free Program) At Udacity.
 
 As part of Udacity Honor code, your submissions must be your own work, hence
 submitting this project as yours will cause you to break the Udacity Honor Code
