@@ -16,6 +16,8 @@ import java.util.List;
  * In simple worlds, this is data sharing class which will be used to share data in other classes.
  */
 public final class Utils {
+    //TODO('Enter Your TMDB Api Key')
+    private static String API_KEY="Enter Your Api key";
 
     public static boolean tvShow = false;
 
@@ -33,39 +35,39 @@ public final class Utils {
 
     public static ScreenSlidePagerAdpater screenSlidePagerAdpater;
 
-    public static final String MOVIES_TOP_RATED_URL = "https://api.themoviedb.org/3/movie/top_rated?api_key=09925a06401a0368732a89cdcb78bc4a";
+    public static final String MOVIES_TOP_RATED_URL = "https://api.themoviedb.org/3/movie/top_rated?api_key="+API_KEY;
 
-    public static final String MOVIES_NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=09925a06401a0368732a89cdcb78bc4a";
+    public static final String MOVIES_NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key="+API_KEY;
 
-    public static final String MOVIES_POPULAR_URL = "https://api.themoviedb.org/3/movie/popular?api_key=09925a06401a0368732a89cdcb78bc4a";
+    public static final String MOVIES_POPULAR_URL = "https://api.themoviedb.org/3/movie/popular?api_key="+API_KEY;
 
-    public static final String MOVIES_UPCOMING_URL = "https://api.themoviedb.org/3/movie/upcoming?api_key=09925a06401a0368732a89cdcb78bc4a";
+    public static final String MOVIES_UPCOMING_URL = "https://api.themoviedb.org/3/movie/upcoming?api_key="+API_KEY;
 
-    public static final String TV_SHOWS_TOP_RATED_URL = "https://api.themoviedb.org/3/tv/top_rated?api_key=09925a06401a0368732a89cdcb78bc4a";
+    public static final String TV_SHOWS_TOP_RATED_URL = "https://api.themoviedb.org/3/tv/top_rated?api_key="+API_KEY;
 
-    public static final String TV_SHOWS_POPULAR_URL = "https://api.themoviedb.org/3/tv/popular?api_key=09925a06401a0368732a89cdcb78bc4a";
+    public static final String TV_SHOWS_POPULAR_URL = "https://api.themoviedb.org/3/tv/popular?api_key="+API_KEY;
 
-    public static final String TV_SHOWS_AIRING_TODAY_URL = "https://api.themoviedb.org/3/tv/airing_today?api_key=09925a06401a0368732a89cdcb78bc4a";
+    public static final String TV_SHOWS_AIRING_TODAY_URL = "https://api.themoviedb.org/3/tv/airing_today?api_key="+API_KEY;
 
-    public static final String TV_SHOWS_ON_THE_AIR_URL = "https://api.themoviedb.org/3/tv/on_the_air?api_key=09925a06401a0368732a89cdcb78bc4a";
+    public static final String TV_SHOWS_ON_THE_AIR_URL = "https://api.themoviedb.org/3/tv/on_the_air?api_key="+API_KEY;
 
-    public static final String SEARCH_MOVIES_PRIMARY_URL = "https://api.themoviedb.org/3/search/movie?api_key=09925a06401a0368732a89cdcb78bc4a&query=";
+    public static final String SEARCH_MOVIES_PRIMARY_URL = "https://api.themoviedb.org/3/search/movie?api_key="+API_KEY+"&query=";
 
-    public static final String SEARCH_TV_SHOWS_PRIMARY_URL = "https://api.themoviedb.org/3/search/tv?api_key=09925a06401a0368732a89cdcb78bc4a&query=";
+    public static final String SEARCH_TV_SHOWS_PRIMARY_URL = "https://api.themoviedb.org/3/search/tv?api_key="+API_KEY+"&query=";
 
     public static int movieOrTvShowId;
 
     public static final String GET_DETAILS_MOVIES_STARTING_URL = "https://api.themoviedb.org/3/movie/";
 
-    public static final String GET_DETAILS_MOVIES_ENDING_URL = "?api_key=09925a06401a0368732a89cdcb78bc4a";
+    public static final String GET_DETAILS_MOVIES_ENDING_URL = "?api_key="+API_KEY;
 
     public static final String GET_DETAILS_TV_SHOWS_STARTING_URL = "https://api.themoviedb.org/3/tv/";
 
-    public static final String GET_DETAILS_TV_SHOWS_ENDING_URL = "?api_key=09925a06401a0368732a89cdcb78bc4a";
+    public static final String GET_DETAILS_TV_SHOWS_ENDING_URL = "?api_key="+API_KEY;
 
     public static final String YOUTUBE_GET_VIDEOS_STARTING_URL = "https://api.themoviedb.org/3/movie/";
 
-    public static final String YOUTUBE_GET_VIDEOS_ENDING_URL = "/videos?api_key=09925a06401a0368732a89cdcb78bc4a";
+    public static final String YOUTUBE_GET_VIDEOS_ENDING_URL = "/videos?api_key="+API_KEY;
 
     public static String currentUrl;
 
