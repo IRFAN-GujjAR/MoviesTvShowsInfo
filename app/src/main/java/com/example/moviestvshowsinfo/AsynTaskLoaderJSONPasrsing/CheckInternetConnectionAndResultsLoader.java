@@ -1,8 +1,8 @@
 package com.example.moviestvshowsinfo.AsynTaskLoaderJSONPasrsing;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
-import android.support.v4.content.AsyncTaskLoader;
+import androidx.annotation.Nullable;
+import androidx.loader.content.AsyncTaskLoader;
 
 import com.example.moviestvshowsinfo.Utils.JSONUtils.JSONParsingForCheckingInternetAndResults;
 import com.example.moviestvshowsinfo.Utils.Utils;

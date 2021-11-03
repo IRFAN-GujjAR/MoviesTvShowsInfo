@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-        <android.support.design.widget.CoordinatorLayout
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
 
 
-        <android.support.design.widget.AppBarLayout
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <android.support.v7.widget.Toolbar
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
@@ -26,7 +26,7 @@
                 app:titleTextAppearance="@style/AppNameTheme"
                 app:titleTextColor="@android:color/black" />
 
-            <android.support.design.widget.TabLayout
+            <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:tabGravity="center"
                 app:tabSelectedTextColor="@android:color/holo_red_dark" />
-        </android.support.design.widget.AppBarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
 
         <com.example.moviestvshowsinfo.CustomViewPager
@@ -43,13 +43,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tab_layout"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/card_view_bottom_navigation_view"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_gravity="bottom">
 
-            <android.support.design.widget.BottomNavigationView
+            <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottom_navigation"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -60,8 +60,8 @@
                 app:itemTextColor="@drawable/selector"
                 app:labelVisibilityMode="labeled"
                 app:menu="@menu/movies_bottom_navigation_menu" />
-        </android.support.v7.widget.CardView>
-    </android.support.design.widget.CoordinatorLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
 
 
